@@ -8,6 +8,6 @@ A3500 yocto build docker environment.
 $ cd /path/to/docker-yocto
 # build image
 $ ./build.sh
-# Run a new container
+# Run container
 # ./join.sh
 ```
