@@ -1,11 +1,11 @@
 #!/bin/sh
-ProjectName=a3500
+ProjectName=nua3500
 
 sudo docker ps -a | grep ${ProjectName}_$(id -nu)>/dev/null;
 if [ $? -ne 0 ]
 then
-	echo "Container ${ProjectName}_$(id -nu) isnot existed!!!"
+	echo "Container ${ProjectName}_$(id -nu) is not existed!!!"
 else
 	sudo docker start ${ProjectName}_$(id -nu)
-	sudo docker exec -u $(id -nu) -it a3500_$(id -nu) bash
+	sudo docker exec -u $(id -nu) -it ${ProjectName}_$(id -nu) bash
 fi
