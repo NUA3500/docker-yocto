@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive
 
 # Install essential Yocto Project host packages
 # Clean up the apt cache by removing /var/lib/apt/lists toreduces the image size
@@ -49,7 +51,11 @@ RUN apt-get update && apt-get install -y \
         bc \
         libncurses5-dev \
         screen \
+        flex \
+        bison \
 	vim-tiny \
+	device-tree-compiler \
+	xvfb \
  && rm -rf /var/lib/apt/lists/* \
  && curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/bin/repo \
  && chmod a+x /usr/bin/repo \
